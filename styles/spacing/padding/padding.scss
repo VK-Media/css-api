@@ -1,0 +1,22 @@
+// Padding classes
+@for $i from 1 through 10 {
+	.p-#{$i} {
+		padding: $spacer * $i;
+	}
+
+	.pt-#{$i} {
+		padding-top: $spacer * $i;
+	}
+
+	.pr-#{$i} {
+		padding-right: $spacer * $i;
+	}
+
+	.pb-#{$i} {
+		padding-bottom: $spacer * $i;
+	}
+
+	.pl-#{$i} {
+		padding-left: $spacer * $i;
+	}
+}

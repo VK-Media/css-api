@@ -1,0 +1,36 @@
+$display: (
+	'b': block,
+	'ib': inline-block,
+	'f': flex,
+	'n': none,
+	'i': initial,
+	'g': grid
+);
+
+@each $key, $value in $display {
+	.d-#{$key} {
+		display: $value;
+	}
+}
+
+@for $i from 1 through 20 {
+	.o-#{$i} {
+		order: #{$i};
+	}
+}
+
+@each $identifier, $breakpoint in $breakpoints {
+    @media (min-width: $breakpoint) {
+        @each $key, $value in $display {
+            .d-#{$identifier}-#{$key} {
+                display: $value;
+            }
+        }
+
+        @for $i from 1 through 20 {
+            .o-#{$identifier}-#{$i} {
+                order: #{$i};
+            }
+        }
+    }
+}

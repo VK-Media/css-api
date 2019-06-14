@@ -1,0 +1,23 @@
+$text-align: (
+	'l': left,
+	'c': center,
+	'r': right,
+	'j': justify,
+	'i': initial
+);
+
+@each $key, $value in $text-align {
+	.ta-#{$key} {
+		text-align: $value;
+	}
+}
+
+@each $identifier, $breakpoint in $breakpoints {
+    @media (min-width: $breakpoint) {
+        @each $key, $value in $text-align {
+            .ta-#{$identifier}-#{$key} {
+                text-align: $value;
+            }
+        }
+    }
+}

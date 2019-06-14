@@ -1,0 +1,25 @@
+{
+    "name": "css-utility",
+    "version": "1.0.0",
+    "description": "The official app for VK Media's CSS Utility tool",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc -p .",
+        "dev": "ts-node ./server.ts",
+        "start": "pm2 start ~/ecosystem.config.js"
+    },
+    "dependencies": {
+        "@types/md5": "^2.1.33",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "md5": "^2.2.1",
+        "node-sass": "^4.12.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.16.1",
+        "@types/node": "^12.0.4",
+        "@types/node-sass": "^4.11.0",
+        "ts-node": "^8.2.0",
+        "typescript": "^3.5.1"
+    }
+}

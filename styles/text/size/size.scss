@@ -1,0 +1,24 @@
+$text-sizes: (
+	1: 12px,
+	2: 16px,
+	3: 22px,
+	4: 28px,
+    5: 34px,
+    6: 40px
+);
+
+@each $key, $value in $text-sizes {
+	.ts-#{$key} {
+		font-size: $value;
+	}
+}
+
+@each $identifier, $breakpoint in $breakpoints {
+    @media (min-width: $breakpoint) {
+        @each $key, $value in $text-sizes {
+            .ts-#{$identifier}-#{$key} {
+                font-size: $value;
+            }
+        }
+    }
+}

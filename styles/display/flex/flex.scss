@@ -1,0 +1,64 @@
+$justify-content: (
+	'fs': flex-start,
+	'fe': flex-end,
+	'c': center,
+	'sb': space-between,
+	'sa': space-around,
+	'i': initial
+);
+
+@each $key, $value in $justify-content {
+	.jc-#{$key} {
+		justify-content: $value;
+	}
+}
+
+$align-items: (
+	's': stretch,
+	'c': center,
+	'fs': flex-start,
+	'fe': flex-end,
+	'b': baseline,
+	'i': initial
+);
+
+@each $key, $value in $align-items {
+	.ai-#{$key} {
+		align-items: $value;
+	}
+}
+
+$flex-wrap: (
+	'nw': nowrap,
+	'w': wrap,
+	'wr': wrap-reverse,
+	'i': initial
+);
+
+@each $key, $value in $flex-wrap {
+	.fw-#{$key} {
+		flex-wrap: $value;
+	}
+}
+
+@each $identifier, $breakpoint in $breakpoints {
+    @media (min-width: $breakpoint) {
+        @each $key, $value in $justify-content {
+            .jc-#{$identifier}-#{$key} {
+                justify-content: $value;
+            }
+        }
+
+        @each $key, $value in $align-items {
+            .ai-#{$identifier}-#{$key} {
+                align-items: $value;
+            }
+        }
+
+        @each $key, $value in $flex-wrap {
+            .fw-#{$identifier}-#{$key} {
+                flex-wrap: $value;
+            }
+        }
+    }
+}
