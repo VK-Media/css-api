@@ -1,7 +1,7 @@
 {
     "name": "css-api",
     "version": "1.0.0",
-    "description": "The official app for VK Media's CSS Utility tool",
+    "description": "The official api for VK Media's CSS Utility tool",
     "main": "index.js",
     "scripts": {
         "build": "tsc -p .",
