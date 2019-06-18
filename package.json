@@ -1,12 +1,12 @@
 {
-    "name": "css-utility",
+    "name": "css-api",
     "version": "1.0.0",
     "description": "The official app for VK Media's CSS Utility tool",
     "main": "index.js",
     "scripts": {
         "build": "tsc -p .",
         "dev": "ts-node ./server.ts",
-        "start": "pm2 start ~/ecosystem.config.js"
+        "serve": "pm2 start css-api"
     },
     "dependencies": {
         "@types/md5": "^2.1.33",

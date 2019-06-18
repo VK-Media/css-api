@@ -30,3 +30,4 @@ node_modules
 # Output files
 output
 temp
+build
