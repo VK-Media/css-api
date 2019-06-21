@@ -11,8 +11,7 @@ export class StyleController {
         const requestData = req.query;
         const entries = Object.entries(requestData);
         const rootFolder = StyleData.getRootFolder();
-        const essentialModule = StyleData.getModule('essential');
-        
+
         let requestedModules: Array<string> = [];
         let modulesToRender: Array<string> = [];
         let dependenciesToAdd: Array<string> = [];
@@ -58,7 +57,7 @@ export class StyleController {
                     const dependencies: Array<string> = module.dependencies;
 
                     dependencies.forEach((dependency: string) => {
-                        if (dependenciesToAdd.indexOf(dependency) == -1) {
+                        if (dependenciesToAdd.indexOf(dependency) === -1) {
                             dependenciesToAdd.push(dependency);
                         }
                     });
@@ -72,7 +71,7 @@ export class StyleController {
         dependenciesToAdd.forEach((dependencyToAdd: string) => {
             const module = StyleData.getModule(dependencyToAdd);
             const fileToInclude = `..${rootFolder}${module.path}.scss`;
-            dependenciesScss += `@import '${fileToInclude}';${scssToRender}`;
+            dependenciesScss += `@import '${fileToInclude}';`;
         });
 
         // Prepend dependencies
@@ -130,10 +129,6 @@ export class StyleController {
                 });
             }
         });
-    }
-
-    protected createScssFile() {
-
     }
 
     protected createRequiredFolders = (): boolean => {

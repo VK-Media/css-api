@@ -1,6 +1,6 @@
 {
     "name": "css-api",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "The official api for VK Media's CSS Utility tool",
     "main": "index.js",
     "scripts": {
