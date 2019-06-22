@@ -1,10 +1,10 @@
 {
     "name": "css-api",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "The official api for VK Media's CSS Utility tool",
     "main": "index.js",
     "scripts": {
-        "build": "tsc -p .",
+        "build": "tsc -p . && cp -rf ./styles ./build/styles",
         "dev": "ts-node ./server.ts",
         "serve": "pm2 start css-api"
     },
